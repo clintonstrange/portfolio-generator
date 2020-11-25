@@ -2,6 +2,8 @@ const inquirer = require("inquirer");
 
 const { writeFile, copyFile } = require("./utils/generate-site.js");
 
+const generatePage = require("./src/page-template.js");
+
 // const pageHTML = generatePage(name, github);
 
 // fs.writeFile('./index.html', pageHTML, err => {
@@ -151,19 +153,19 @@ const promptProject = (portfolioData) => {
 
 promptUser()
   .then(promptProject)
-  .then(portfolioData => {
+  .then((portfolioData) => {
     return generatePage(portfolioData);
   })
-  .then(pageHTML => {
+  .then((pageHTML) => {
     return writeFile(pageHTML);
   })
-  .then(writeFileResponse => {
+  .then((writeFileResponse) => {
     console.log(writeFileResponse);
     return copyFile();
   })
-  .then(copyFileResponse => {
+  .then((copyFileResponse) => {
     console.log(copyFileResponse);
   })
-  .catch(err => {
+  .catch((err) => {
     console.log(err);
   });
