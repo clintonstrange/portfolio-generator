@@ -81,7 +81,7 @@ module.exports = (templateData) => {
             header.name
           }</h1>
           <nav class="flex-row">
-            <a class="ml-2 my-1 px-2 py-1 bg-secondary text-dark" target=blank href="https://github.com/${
+            <a class="ml-2 my-1 px-2 py-1 bg-secondary text-dark" target="blank" href="https://github.com/${
               header.github
             }">GitHub</a>
           </nav>
